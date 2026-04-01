@@ -1,68 +1,82 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>مثلث الجهد والكثافة الاحتمالية</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مثلث الجهد والكثافة الاحتمالية</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f172a, #2563eb);
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
+    }
 
-<style>
-body {
-    font-family: Arial;
-    background: linear-gradient(to right, #0f172a, #2563eb);
-    color: white;
-    text-align: center;
-    padding-top: 50px;
-}
+    h1 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
 
-h1 {
-    font-size: 35px;
-}
+    p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
 
-select {
-    padding: 10px;
-    font-size: 18px;
-    width: 200px;
-}
+    select {
+      padding: 10px;
+      font-size: 18px;
+      width: 220px;
+      border-radius: 8px;
+      border: none;
+    }
 
-img {
-    margin-top: 30px;
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px black;
-}
-</style>
+    .image-container {
+      margin-top: 30px;
+    }
 
+    img {
+      max-width: 90%;
+      width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.35);
+      background: white;
+      display: none;
+    }
+  </style>
 </head>
-
 <body>
 
-<h1>مثلث الجهد والكثافة الاحتمالية</h1>
-<p>اختاري زاوية رأس المثلث:</p>
+  <h1>مثلث الجهد والكثافة الاحتمالية</h1>
+  <p>اختاري زاوية رأس المثلث:</p>
 
-<select onchange="showImage()" id="angleSelect">
+  <select id="angleSelect" onchange="showImage()">
     <option value="">-- اختاري زاوية --</option>
     <option value="30">30°</option>
     <option value="60">60°</option>
     <option value="90">90°</option>
     <option value="110">110°</option>
-</select>
+  </select>
 
-<br>
+  <div class="image-container">
+    <img id="resultImage" alt="صورة الكثافة الاحتمالية داخل المثلث">
+  </div>
 
-<img id="resultImage" src="" style="display:none;">
+  <script>
+    function showImage() {
+      const angle = document.getElementById("angleSelect").value;
+      const img = document.getElementById("resultImage");
 
-<script>
-function showImage() {
-    let angle = document.getElementById("angleSelect").value;
-    let img = document.getElementById("resultImage");
-
-    if (angle !== "") {
-        img.src = "images/angle_" + angle + ".png";
+      if (angle !== "") {
+        img.src = "angle_" + angle + ".png";
         img.style.display = "block";
-    } else {
+      } else {
         img.style.display = "none";
+        img.removeAttribute("src");
+      }
     }
-}
-</script>
+  </script>
 
 </body>
 </html>
