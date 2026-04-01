@@ -1,28 +1,66 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>قسم الفيزياء</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: linear-gradient(to right, #0f172a, #2563eb);
-      color: white;
-      text-align: center;
-      padding-top: 100px;
-    }
-    h1 {
-      font-size: 40px;
-    }
-    p {
-      font-size: 22px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>قسم الفيزياء</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(to right, #0f172a, #2563eb);
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+</style>
+
 </head>
+
 <body>
 
 <h1>مرحباً بكم في قسم الفيزياء - كلية العلوم</h1>
 <p>إعداد الطالبة: رغد البهلول</p>
+
+<br>
+
+<input type="number" id="numberInput" placeholder="ادخل رقم">
+<br><br>
+
+<button onclick="convert()">تحويل</button>
+
+<div id="result"></div>
+
+<script>
+function convert() {
+    let num = document.getElementById("numberInput").value;
+
+    if (num >= 1 && num <= 26) {
+        let letter = String.fromCharCode(64 + Number(num));
+        document.getElementById("result").innerText = letter;
+    } else {
+        document.getElementById("result").innerText = "ادخل رقم من 1 إلى 26";
+    }
+}
+</script>
 
 </body>
 </html>
