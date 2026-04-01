@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>قسم الفيزياء</title>
+<title>مثلث الجهد والكثافة الاحتمالية</title>
 
 <style>
 body {
@@ -10,26 +10,24 @@ body {
     background: linear-gradient(to right, #0f172a, #2563eb);
     color: white;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 50px;
 }
 
-input {
+h1 {
+    font-size: 35px;
+}
+
+select {
     padding: 10px;
     font-size: 18px;
     width: 200px;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-#result {
-    margin-top: 20px;
-    font-size: 30px;
-    font-weight: bold;
+img {
+    margin-top: 30px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
 }
 </style>
 
@@ -37,27 +35,31 @@ button {
 
 <body>
 
-<h1>مرحباً بكم في قسم الفيزياء - كلية العلوم</h1>
-<p>إعداد الطالبة: رغد البهلول</p>
+<h1>مثلث الجهد والكثافة الاحتمالية</h1>
+<p>اختاري زاوية رأس المثلث:</p>
+
+<select onchange="showImage()" id="angleSelect">
+    <option value="">-- اختاري زاوية --</option>
+    <option value="30">30°</option>
+    <option value="60">60°</option>
+    <option value="90">90°</option>
+    <option value="110">110°</option>
+</select>
 
 <br>
 
-<input type="number" id="numberInput" placeholder="ادخل رقم">
-<br><br>
-
-<button onclick="convert()">تحويل</button>
-
-<div id="result"></div>
+<img id="resultImage" src="" style="display:none;">
 
 <script>
-function convert() {
-    let num = document.getElementById("numberInput").value;
+function showImage() {
+    let angle = document.getElementById("angleSelect").value;
+    let img = document.getElementById("resultImage");
 
-    if (num >= 1 && num <= 26) {
-        let letter = String.fromCharCode(64 + Number(num));
-        document.getElementById("result").innerText = letter;
+    if (angle !== "") {
+        img.src = "images/angle_" + angle + ".png";
+        img.style.display = "block";
     } else {
-        document.getElementById("result").innerText = "ادخل رقم من 1 إلى 26";
+        img.style.display = "none";
     }
 }
 </script>
