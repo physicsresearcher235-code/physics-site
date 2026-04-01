@@ -4,78 +4,213 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مثلث الجهد والكثافة الاحتمالية</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #0f172a, #2563eb);
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background: linear-gradient(to right, #020617, #1e3a8a);
       color: white;
       text-align: center;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      gap: 20px;
+    }
+
+    .logo {
+      width: 90px;
+      height: auto;
+      background: white;
+      border-radius: 12px;
+      padding: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .title-box {
+      flex: 1;
+    }
+
+    .main-title {
+      font-size: 34px;
+      font-weight: bold;
       margin: 0;
-      padding: 40px 20px;
     }
 
-    h1 {
-      font-size: 38px;
-      margin-bottom: 15px;
+    .welcome {
+      font-size: 24px;
+      margin-top: 8px;
+      color: #e5e7eb;
     }
 
-    p {
-      font-size: 20px;
+    .subtitle {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .content-box {
+      width: 85%;
+      max-width: 950px;
+      margin: 30px auto 50px auto;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      padding: 30px 25px 40px 25px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+      backdrop-filter: blur(8px);
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .section-text {
+      font-size: 18px;
+      color: #dbeafe;
+      line-height: 1.9;
       margin-bottom: 20px;
     }
 
+    label {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
     select {
-      padding: 10px;
-      font-size: 18px;
-      width: 220px;
-      border-radius: 8px;
-      border: none;
-    }
-
-    .image-container {
-      margin-top: 30px;
-    }
-
-    img {
-      max-width: 90%;
-      width: 700px;
+      padding: 12px 16px;
+      font-size: 22px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.35);
+      border: none;
+      min-width: 220px;
+      text-align: center;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .image-box {
+      margin-top: 35px;
+    }
+
+    .result-image {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 18px;
       background: white;
-      display: none;
+      padding: 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      font-size: 16px;
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .main-title {
+        font-size: 28px;
+      }
+
+      .welcome {
+        font-size: 20px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .logo {
+        width: 80px;
+      }
+
+      label {
+        font-size: 20px;
+      }
+
+      select {
+        font-size: 18px;
+        min-width: 180px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>مثلث الجهد والكثافة الاحتمالية</h1>
-  <p>اختاري زاوية رأس المثلث:</p>
+  <div class="top-bar">
+    <img src="images/faculty-logo.png" alt="شعار الكلية" class="logo">
 
-  <select id="angleSelect" onchange="showImage()">
-    <option value="">-- اختاري زاوية --</option>
-    <option value="30">30°</option>
-    <option value="60">60°</option>
-    <option value="90">90°</option>
-    <option value="110">110°</option>
-  </select>
+    <div class="title-box">
+      <h1 class="main-title">قسم الفيزياء - كلية العلوم</h1>
+      <div class="welcome">مرحبًا بكم في قسم الفيزياء</div>
+      <div class="subtitle">
+        منصة تفاعلية لعرض نتائج بئر الجهد المثلثي وتمثيل الكثافة الاحتمالية
+      </div>
+    </div>
 
-  <div class="image-container">
-    <img id="resultImage" alt="صورة الكثافة الاحتمالية داخل المثلث">
+    <img src="images/university-logo.png" alt="شعار الجامعة" class="logo">
+  </div>
+
+  <div class="content-box">
+    <div class="section-title">اختاري زاوية رأس المثلث</div>
+    <div class="section-text">
+      هذه واجهة مبدئية لعرض النتائج البصرية والعددية المتعلقة بتغير زاوية رأس المثلث.
+    </div>
+
+    <label for="angleSelect">زاوية الرأس:</label>
+    <select id="angleSelect">
+      <option value="30">30°</option>
+      <option value="35">35°</option>
+      <option value="40">40°</option>
+      <option value="45">45°</option>
+      <option value="50">50°</option>
+      <option value="55">55°</option>
+      <option value="60">60°</option>
+      <option value="65">65°</option>
+      <option value="70">70°</option>
+      <option value="75">75°</option>
+      <option value="80">80°</option>
+      <option value="85">85°</option>
+      <option value="90" selected>90°</option>
+      <option value="95">95°</option>
+      <option value="100">100°</option>
+      <option value="105">105°</option>
+      <option value="110">110°</option>
+    </select>
+
+    <div class="image-box">
+      <img id="resultImage" src="images/example.png" alt="نتيجة الكثافة الاحتمالية" class="result-image">
+    </div>
+
+    <div class="footer-note">
+      إعداد الطالبة: رغد البهلول
+    </div>
   </div>
 
   <script>
-    function showImage() {
-      const angle = document.getElementById("angleSelect").value;
-      const img = document.getElementById("resultImage");
+    const angleSelect = document.getElementById("angleSelect");
+    const resultImage = document.getElementById("resultImage");
 
-      if (angle !== "") {
-        img.src = "angle_" + angle + ".png";
-        img.style.display = "block";
-      } else {
-        img.style.display = "none";
-        img.removeAttribute("src");
-      }
-    }
+    angleSelect.addEventListener("change", function () {
+      const angle = angleSelect.value;
+      resultImage.src = "images/angle_" + angle + ".png";
+    });
   </script>
 
 </body>
