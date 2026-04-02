@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>مثلث الجهد والكثافة الاحتمالية</title>
+  <title>قسم الفيزياء</title>
 
   <style>
     body {
@@ -13,7 +13,6 @@
       text-align: center;
     }
 
-    /* الشريط العلوي */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -49,7 +48,6 @@
       color: #cbd5e1;
     }
 
-    /* صندوق المحتوى */
     .content-box {
       width: 85%;
       max-width: 900px;
@@ -60,18 +58,12 @@
       backdrop-filter: blur(8px);
     }
 
-    label {
-      font-size: 22px;
-      display: block;
-      margin: 20px 0 10px;
-    }
-
     select {
       padding: 10px;
       font-size: 20px;
       border-radius: 10px;
       border: none;
-      text-align: center;
+      margin-top: 15px;
     }
 
     .result-image {
@@ -92,14 +84,14 @@
 
 <body>
 
-  <!-- الشريط العلوي -->
+  <!-- الشعارات -->
   <div class="top-bar">
     <img src="faculty-logo.png" class="logo">
 
     <div class="title-box">
       <div class="main-title">قسم الفيزياء - كلية العلوم</div>
       <div class="welcome">مرحبًا بكم في قسم الفيزياء</div>
-      <div class="subtitle">منصة تفاعلية لعرض نتائج بئر الجهد المثلثي والكثافة الاحتمالية</div>
+      <div class="subtitle">منصة تفاعلية لعرض نتائج بئر الجهد المثلثي</div>
     </div>
 
     <img src="university-logo.png" class="logo">
@@ -109,7 +101,6 @@
   <div class="content-box">
     <h2>اختاري زاوية رأس المثلث</h2>
 
-    <label>زاوية الرأس:</label>
     <select id="angleSelect">
       <option value="30">30°</option>
       <option value="60">60°</option>
@@ -126,7 +117,6 @@
     </div>
   </div>
 
-  <!-- JavaScript -->
   <script>
     const select = document.getElementById("angleSelect");
     const image = document.getElementById("resultImage");
