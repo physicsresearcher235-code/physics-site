@@ -2,14 +2,18 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>قسم الفيزياء</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قسم الفيزياء - كلية العلوم</title>
+
+  <!-- خط عربي جميل -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, Tahoma;
+      font-family: 'Cairo', Arial;
       background: linear-gradient(to right, #020617, #1e3a8a);
-      color: white;
+      color: #f1f5f9;
       text-align: center;
     }
 
@@ -21,10 +25,10 @@
     }
 
     .logo {
-      width: 90px;
+      width: 85px;
       background: white;
-      border-radius: 10px;
-      padding: 5px;
+      border-radius: 12px;
+      padding: 6px;
     }
 
     .title-box {
@@ -32,14 +36,16 @@
     }
 
     .main-title {
-      font-size: 32px;
-      font-weight: bold;
+      font-size: 36px;
+      font-weight: 800;
+      margin: 0;
+      color: #ffffff;
     }
 
     .welcome {
-      font-size: 22px;
-      margin-top: 5px;
-      color: #e5e7eb;
+      font-size: 24px;
+      margin-top: 10px;
+      color: #e2e8f0;
     }
 
     .subtitle {
@@ -51,55 +57,79 @@
     .content-box {
       width: 85%;
       max-width: 900px;
-      margin: 30px auto;
-      background: rgba(255,255,255,0.08);
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 20px;
       padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
       backdrop-filter: blur(8px);
     }
 
+    label {
+      font-size: 24px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
     select {
-      padding: 10px;
+      padding: 12px;
       font-size: 20px;
       border-radius: 10px;
       border: none;
-      margin-top: 15px;
+      min-width: 200px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .image-box {
+      margin-top: 30px;
     }
 
     .result-image {
-      margin-top: 25px;
-      max-width: 100%;
+      width: 100%;
+      max-width: 650px;
       border-radius: 15px;
       background: white;
       padding: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     }
 
     .footer {
-      margin-top: 20px;
-      font-size: 16px;
-      color: #cbd5e1;
+      margin-top: 30px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #f8fafc;
+      font-weight: 600;
     }
+
+    .footer span {
+      display: block;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <!-- الشعارات -->
   <div class="top-bar">
-    <img src="faculty-logo.png" class="logo">
+    <img src="./faculty-logo.png" class="logo">
 
     <div class="title-box">
-      <div class="main-title">قسم الفيزياء - كلية العلوم</div>
+      <h1 class="main-title">قسم الفيزياء - كلية العلوم</h1>
       <div class="welcome">مرحبًا بكم في قسم الفيزياء</div>
-      <div class="subtitle">منصة تفاعلية لعرض نتائج بئر الجهد المثلثي</div>
+      <div class="subtitle">
+        منصة تفاعلية لعرض نتائج بئر الجهد المثلثي وتمثيل الكثافة الاحتمالية
+      </div>
     </div>
 
-    <img src="university-logo.png" class="logo">
+    <img src="./university-logo.png" class="logo">
   </div>
 
-  <!-- المحتوى -->
   <div class="content-box">
-    <h2>اختاري زاوية رأس المثلث</h2>
+    <label>اختاري زاوية رأس المثلث:</label>
 
     <select id="angleSelect">
       <option value="30">30°</option>
@@ -108,22 +138,23 @@
       <option value="110">110°</option>
     </select>
 
-    <br>
-
-    <img id="resultImage" src="angle_90.png" class="result-image">
+    <div class="image-box">
+      <img id="resultImage" src="./angle_90.png" class="result-image">
+    </div>
 
     <div class="footer">
-      إعداد الطالبة: رغد البهلول
+      <span>إعداد الطالبة: رغد كمال البهلول</span>
+      <span>إشراف: أ. علي عمر المصراتي</span>
     </div>
   </div>
 
   <script>
-    const select = document.getElementById("angleSelect");
-    const image = document.getElementById("resultImage");
+    const angleSelect = document.getElementById("angleSelect");
+    const resultImage = document.getElementById("resultImage");
 
-    select.addEventListener("change", function () {
-      const angle = select.value;
-      image.src = "angle_" + angle + ".png";
+    angleSelect.addEventListener("change", function () {
+      const angle = angleSelect.value;
+      resultImage.src = "./angle_" + angle + ".png";
     });
   </script>
 
