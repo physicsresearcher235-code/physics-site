@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الميكانيكا الكلاسيكية | قسم الفيزياء</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-shell">
+            <div class="header-top">
+                <img class="header-logo" src="university-logo.png" alt="شعار جامعة مصراتة">
+                <h1 class="dept-title">قسم الفيزياء - الميكانيكا الكلاسيكية</h1>
+                <img class="header-logo" src="faculty-logo.png" alt="شعار كلية العلوم">
+            </div>
+            <nav class="nav-tabs">
+                <a class="nav-link" href="index.html">الصفحة الترحيبية</a>
+                <a class="nav-link active" href="classical.html">الميكانيكا الكلاسيكية</a>
+                <a class="nav-link" href="quantum.html">الميكانيكا الكمومية</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>تمثيلات تفاعلية للمفاهيم الكلاسيكية</h1>
+            <p>
+                في هذه الصفحة تم تجميع الوحدات الخاصة بالمتجهات ومعادلات الحركة في مكان واحد،
+                مع الحفاظ على نفس الطابع البصري للموقع الأصلي ليسهل استخدامها في التعليم والعرض.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>تحليل المتجهات</h2>
+            <p class="section-intro">
+                غيّر مقدار كل قوة وزاويتها لتشاهد مركباتها ومتجه المحصلة لحظياً.
+            </p>
+            <div class="flex-row">
+                <div class="control-group">
+                    <label>القوة الأولى F₁ (N)</label>
+                    <input type="range" id="f1_mag" min="0" max="20" step="0.5" value="10">
+                    <div class="value-display" id="f1_val">10.0 N</div>
+                    <label>زاوية القوة الأولى θ₁ (deg)</label>
+                    <input type="range" id="f1_ang" min="0" max="360" step="1" value="30">
+                    <div class="value-display" id="f1_ang_val">30°</div>
+                </div>
+                <div class="control-group">
+                    <label>القوة الثانية F₂ (N)</label>
+                    <input type="range" id="f2_mag" min="0" max="20" step="0.5" value="8">
+                    <div class="value-display" id="f2_val">8.0 N</div>
+                    <label>زاوية القوة الثانية θ₂ (deg)</label>
+                    <input type="range" id="f2_ang" min="0" max="360" step="1" value="120">
+                    <div class="value-display" id="f2_ang_val">120°</div>
+                </div>
+            </div>
+            <div class="results">
+                <div class="result-line"><span>Fx₁:</span> <strong id="fx1">8.66</strong> <span>N</span></div>
+                <div class="result-line"><span>Fy₁:</span> <strong id="fy1">5.00</strong> <span>N</span></div>
+                <div class="result-line"><span>Fx₂:</span> <strong id="fx2">-4.00</strong> <span>N</span></div>
+                <div class="result-line"><span>Fy₂:</span> <strong id="fy2">6.93</strong> <span>N</span></div>
+                <div class="result-line"><span>المحصلة:</span> <strong id="r_mag">12.81</strong> <span>N @ <strong id="r_ang">68.66</strong>°</span></div>
+            </div>
+            <canvas id="vectorCanvas" width="500" height="300" style="width:100%; aspect-ratio:500/300; background:#fef9e8;"></canvas>
+            <div class="explanation">Fx = F cosθ ، Fy = F sinθ ، والمحصلـة R = √(ΣFx² + ΣFy²)</div>
+        </section>
+
+        <section class="card">
+            <h2>معادلات الحركة في بعد واحد</h2>
+            <p class="section-intro">
+                تحكم في السرعة الابتدائية والتسارع والزمن، ثم راقب الإزاحة والسرعة النهائية وتمثيل الحركة.
+            </p>
+            <div class="flex-row">
+                <div class="control-group">
+                    <label>السرعة الابتدائية u (m/s)</label>
+                    <input type="range" id="initV" min="-10" max="10" step="0.5" value="2">
+                    <div class="value-display" id="u_val">2.0 m/s</div>
+                </div>
+                <div class="control-group">
+                    <label>التسارع a (m/s²)</label>
+                    <input type="range" id="accel" min="-5" max="5" step="0.2" value="1">
+                    <div class="value-display" id="a_val">1.0 m/s²</div>
+                </div>
+                <div class="control-group">
+                    <label>الزمن t (s)</label>
+                    <input type="range" id="time" min="0" max="10" step="0.1" value="2">
+                    <div class="value-display" id="t_val">2.0 s</div>
+                </div>
+            </div>
+            <div class="results">
+                <div class="result-line"><span>الإزاحة s = ut + ½at²:</span> <strong id="s_val">6.00 m</strong></div>
+                <div class="result-line"><span>السرعة النهائية v = u + at:</span> <strong id="v_val">4.00 m/s</strong></div>
+                <div class="result-line"><span>التحقق من العلاقة v² = u² + 2as:</span> <strong id="v2_check">16.00 (v² = 16.00)</strong></div>
+            </div>
+            <canvas id="motionCanvas" width="600" height="120" style="width:100%; height:120px; background:#0f172a; border-radius:20px;"></canvas>
+            <div class="explanation">هذه الوحدة تساعد على ربط القوانين الأساسية للحركة بالتمثيل البصري المباشر.</div>
+        </section>
+
+        <div class="footer">إعداد: رغد كمال مهيب | بإشراف: الأستاذ علي عمر المرسلي</div>
+    </div>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

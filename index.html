@@ -1,162 +1,79 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>قسم الفيزياء - كلية العلوم</title>
-
-  <!-- خط عربي جميل -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Cairo', Arial;
-      background: linear-gradient(to right, #020617, #1e3a8a);
-      color: #f1f5f9;
-      text-align: center;
-    }
-
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-    }
-
-    .logo {
-      width: 85px;
-      background: white;
-      border-radius: 12px;
-      padding: 6px;
-    }
-
-    .title-box {
-      flex: 1;
-    }
-
-    .main-title {
-      font-size: 36px;
-      font-weight: 800;
-      margin: 0;
-      color: #ffffff;
-    }
-
-    .welcome {
-      font-size: 24px;
-      margin-top: 10px;
-      color: #e2e8f0;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      margin-top: 10px;
-      color: #cbd5e1;
-    }
-
-    .content-box {
-      width: 85%;
-      max-width: 900px;
-      margin: 40px auto;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      backdrop-filter: blur(8px);
-    }
-
-    label {
-      font-size: 24px;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 15px;
-      color: #ffffff;
-    }
-
-    select {
-      padding: 12px;
-      font-size: 20px;
-      border-radius: 10px;
-      border: none;
-      min-width: 200px;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .image-box {
-      margin-top: 30px;
-    }
-
-    .result-image {
-      width: 100%;
-      max-width: 650px;
-      border-radius: 15px;
-      background: white;
-      padding: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #f8fafc;
-      font-weight: 600;
-    }
-
-    .footer span {
-      display: block;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم الفيزياء | المنصة التفاعلية</title>
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
-
 <body>
+    <div class="container">
+        <header class="header-shell">
+            <div class="header-top">
+                <img class="header-logo" src="university-logo.png" alt="شعار جامعة مصراتة">
+                <h1 class="dept-title">مرحباً بكم في قسم الفيزياء</h1>
+                <img class="header-logo" src="faculty-logo.png" alt="شعار كلية العلوم">
+            </div>
+            <nav class="nav-tabs">
+                <a class="nav-link active" href="index.html">الصفحة الترحيبية</a>
+                <a class="nav-link" href="classical.html">الميكانيكا الكلاسيكية</a>
+                <a class="nav-link" href="quantum.html">الميكانيكا الكمومية</a>
+            </nav>
+        </header>
 
-  <div class="top-bar">
-    <img src="./faculty-logo.png" class="logo">
+        <section class="hero">
+            <h1>منصة تفاعلية لتمثيل سلوك الأنظمة الفيزيائية</h1>
+            <p>
+                هذه النسخة مبنية بنفس الروح البصرية للموقع الأصلي، لكن مع تنظيم أوضح للصفحات
+                وفصل المحتوى إلى مسارين رئيسيين: الميكانيكا الكلاسيكية والميكانيكا الكمومية.
+                الهدف هو تقديم تجربة تعليمية مرتبة وجذابة تصلح للعرض الأكاديمي والتطوير اللاحق.
+            </p>
+            <div class="meta-row">
+                <div class="meta-pill">إعداد: رغد كمال مهيب</div>
+                <div class="meta-pill">بإشراف: الأستاذ علي عمر المرسلي</div>
+                <div class="meta-pill">جامعة مصراتة - كلية العلوم - قسم الفيزياء</div>
+            </div>
+            <div class="hero-grid">
+                <div class="info-card">
+                    <h3>الفكرة العامة</h3>
+                    <p>
+                        عرض مفاهيم فيزيائية مختارة بطريقة تفاعلية تساعد الطالب على الربط بين المعادلة
+                        والتمثيل البصري والنتيجة المباشرة.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>مسار الدراسة</h3>
+                    <p>
+                        تم فصل التجارب إلى صفحات مستقلة لتسهيل الاستخدام أثناء العرض أو الدراسة الميدانية
+                        ولجعل كل موضوع أكثر وضوحاً واستقراراً.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>التطوير القادم</h3>
+                    <p>
+                        يمكن توسيع هذه النسخة لاحقاً بإضافة وحدات متقدمة أخرى أو ربطها بنتائج عددية
+                        أكثر تخصصاً عندما تكتمل صياغتها العلمية.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <div class="title-box">
-      <h1 class="main-title">قسم الفيزياء - كلية العلوم</h1>
-      <div class="welcome">مرحبًا بكم في قسم الفيزياء</div>
-      <div class="subtitle">
-        منصة تفاعلية لعرض نتائج بئر الجهد المثلثي وتمثيل الكثافة الاحتمالية
-      </div>
+        <section class="feature-grid">
+            <a class="feature-card" href="classical.html">
+                <h3>صفحة الميكانيكا الكلاسيكية</h3>
+                <p>
+                    تحتوي على تحليل المتجهات ومعادلات الحركة الخطية بصياغة تفاعلية مطابقة لأسلوب الموقع الأصلي.
+                </p>
+            </a>
+            <a class="feature-card" href="quantum.html">
+                <h3>صفحة الميكانيكا الكمومية</h3>
+                <p>
+                    تعرض بئر الجهد الأحادي البعد مع تمثيل الدالة الموجية والكثافة الاحتمالية بشكل مباشر وواضح.
+                </p>
+            </a>
+        </section>
+
+        <div class="footer">نسخة عمل أولية منظمة للعرض والتطوير.</div>
     </div>
-
-    <img src="./university-logo.png" class="logo">
-  </div>
-
-  <div class="content-box">
-    <label>اختاري زاوية رأس المثلث:</label>
-
-    <select id="angleSelect">
-      <option value="30">30°</option>
-      <option value="60">60°</option>
-      <option value="90" selected>90°</option>
-      <option value="110">110°</option>
-    </select>
-
-    <div class="image-box">
-      <img id="resultImage" src="./angle_90.png" class="result-image">
-    </div>
-
-    <div class="footer">
-      <span>إعداد الطالبة: رغد كمال البهلول</span>
-      <span>إشراف: أ. علي عمر المصراتي</span>
-    </div>
-  </div>
-
-  <script>
-    const angleSelect = document.getElementById("angleSelect");
-    const resultImage = document.getElementById("resultImage");
-
-    angleSelect.addEventListener("change", function () {
-      const angle = angleSelect.value;
-      resultImage.src = "./angle_" + angle + ".png";
-    });
-  </script>
-
 </body>
 </html>
