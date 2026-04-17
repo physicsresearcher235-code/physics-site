@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم الفيزياء | الكهربائية</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+    <main class="page-shell">
+        <header class="site-header site-header--welcome">
+            <div class="brand-lockup">
+                <img class="logo-badge logo-badge--hero logo-badge--faculty" src="./images/faculty-logo-clean.png" alt="شعار الكلية">
+                <div class="brand-copy">
+                    <h2>الكهربائية</h2>
+                </div>
+                <img class="logo-badge logo-badge--hero logo-badge--university" src="./images/university-logo-clean.png" alt="شعار الجامعة">
+            </div>
+            <nav class="top-nav" aria-label="روابط الصفحات">
+                <a href="./index.html">الرئيسية</a>
+                <a href="./classical.html">الميكانيكا الكلاسيكية</a>
+                <a href="./electricity.html" aria-current="page">الكهربائية</a>
+                <a href="./quantum.html">ميكانيكا الكم</a>
+                <a href="./triangular.html">البئر المثلثي</a>
+            </nav>
+        </header>
+
+        <section class="content-grid">
+            <article class="card">
+                <div class="card-title">
+                    <div>
+                        <h3>قانون كولوم مع محاكاة الحركة</h3>
+                    </div>
+                    <div class="badge">F = k |q1 q2| / r²</div>
+                </div>
+
+                <div class="control-grid">
+                    <div class="control-group">
+                        <label for="charge1">الشحنة الأولى q1</label>
+                        <input type="range" id="charge1" min="-10" max="10" step="0.5" value="4">
+                        <div class="value-display" id="charge1Val">+4.0 ميكروكولوم</div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="charge2">الشحنة الثانية q2</label>
+                        <input type="range" id="charge2" min="-10" max="10" step="0.5" value="-3">
+                        <div class="value-display" id="charge2Val">-3.0 ميكروكولوم</div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="distance">المسافة الابتدائية r</label>
+                        <input type="range" id="distance" min="0.2" max="3" step="0.05" value="1.2">
+                        <div class="value-display" id="distanceVal">1.20 متر</div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="simSpeed">سرعة العرض</label>
+                        <input type="range" id="simSpeed" min="0.5" max="4" step="0.1" value="1.6">
+                        <div class="value-display" id="simSpeedVal">1.6 ×</div>
+                    </div>
+                </div>
+
+                <div class="button-row">
+                    <button type="button" class="sim-button" id="startElectricity">ابدأ التفاعل</button>
+                    <button type="button" class="sim-button sim-button--secondary" id="resetElectricity">إعادة الضبط</button>
+                    <div class="motion-status" id="electricStatus">جاهز للمحاكاة</div>
+                </div>
+
+                <div class="results">
+                    <div class="result-line"><span>مقدار القوة الكهربائية الحالي</span><strong id="forceVal">0.0000 N</strong></div>
+                    <div class="result-line"><span>نوع التفاعل</span><strong id="interactionVal">تجاذب</strong></div>
+                    <div class="result-line"><span>المسافة الحالية بين الشحنتين</span><strong id="distanceNowVal">1.20 متر</strong></div>
+                    <div class="result-line"><span>زمن المحاكاة</span><strong id="simTimeVal">0.00 ث</strong></div>
+                    <div class="result-line"><span>الطاقة الكامنة الكهربائية</span><strong id="potentialVal">0.0000 J</strong></div>
+                    <div class="result-line"><span>ملاحظة فيزيائية</span><strong id="lawVal">القوتان متساويتان مقدارًا ومتعاكستان اتجاهًا</strong></div>
+                </div>
+
+                <div class="canvas-grid canvas-grid--single">
+                    <canvas id="electricCanvas" width="720" height="360"></canvas>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="./assets/electricity.js"></script>
+</body>
+</html>
